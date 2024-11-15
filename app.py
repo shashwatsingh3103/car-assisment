@@ -38,8 +38,7 @@ def login():
             st.session_state.user_id = user[0]
             st.session_state.username = username
             st.success("Logged in successfully!")
-            st.session_state.page = "Car List"  # Redirect to Car List page
-            st.experimental_rerun()  # Reload to show the car management page
+            st.session_state.page = "Car List"  # Set the page to "Car List"
         else:
             st.error("Invalid credentials")
             st.session_state.username = ""
@@ -61,8 +60,8 @@ def signup():
 
             # After successful sign-up, show a button to go to the login page
             if st.button("Go to Login"):
-                st.session_state.page = "Login"
-                st.experimental_rerun()  # Reload to show the login page
+                st.session_state.page = "Login"  # Set the page to "Login"
+            st.experimental_rerun()  # Reload the app to switch pages
 
 # Page Logic
 if 'user_id' not in st.session_state:
